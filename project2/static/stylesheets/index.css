@@ -1,0 +1,227 @@
+.navv{
+    display: flex;
+    word-spacing: 30px;
+    color: #1E7AE1;
+    width: 100%;
+    height: 10%;
+    border-bottom: 1px solid black;
+    border-color: #d3d3d3;
+}
+.navv a{
+    color: #1E7AE1;
+    outline: 1px solid transparent;
+}
+.navv h2{
+    font-size: 35px;
+    font-weight: bold;
+}
+.navv .btn{
+    float: right;
+    height: auto;
+    width: auto;
+    align-content: stretch;
+    font-size: 23px;
+    color: #1E7AE1;
+    background: transparent;
+    border-radius: 5%;
+    outline: none;
+}
+.navv .name{
+    width: 45vw;
+    flex-wrap: nowrap;
+    margin-left: 2%;
+    margin-top: 2vh;
+}
+.navv .getstarted{
+    width: 55vw;
+    flex-wrap: nowrap;
+    margin-top: 1vh;
+    margin-right: 2%;
+}
+.navv .btn:hover{
+    color: #175fae;
+}
+.tagline{
+    flex-wrap: nowrap;
+    margin-top: 16vh;
+    width: 45%;
+    height: 20%;
+    color: #000000;
+}
+.tagline h1{
+    margin-left: -7vw;
+    font-weight: bold;
+    display: block;
+}
+.tagline p{
+    margin-top: 2vw;
+    margin-left: -7vw;
+    font-size: 23px;
+}
+.secondline{
+    opacity: 0;
+}
+body{
+    font-family: 'Comfortaa';
+    background-color: #ffffff;
+}
+.main{
+    display: flex;
+}
+.image{
+    margin-right: 5%;
+    flex-wrap: nowrap;
+    width: 55%;
+    height: auto;
+}
+.image .pc{
+    margin-top: 10vh;
+    margin-left: 17vh;
+    height: auto;
+    width: 80%;
+    position: relative;
+}
+.image .laptop{
+    margin-top: -48%;
+    margin-left:40%;
+    height: auto;
+    width: 80%;
+    position: relative;
+}
+.footer{
+    display: flex;
+    height: 8vh;
+    width: 100%;
+    background-color: #bccbde;
+    position: fixed;
+    bottom: 0;
+}
+.aboutus{
+    flex-wrap: flex;
+    margin-top: 1.9vh;
+    font-weight: bold;
+    height: 40px;
+    width: 50vw;
+    margin-left: 3vw;
+    font-size: 17px;
+}
+.aboutus .github{
+    text-decoration: none;
+    height: 25px;
+    width: 40px;
+}
+.aboutus .email{
+    text-decoration: none;
+    margin-top: 3px;
+    height: 20px;
+    width: 20px;
+    margin-left: 3px;
+}
+.aboutus .twitter{
+    text-decoration: none;
+    margin-left: 8px;
+    height: 30px;
+    width: 25px;
+}
+.copyrights{
+    margin-top: 2.3vh;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 50vw;
+    height: 40px;
+    font-size: 17px;
+    position: relative;
+}
+.copyrights .icon{
+    margin-bottom: 3px;
+    width: 25px;
+    height: 25px;
+}
+.copyrights .copyright{
+    width: auto;
+    height: auto;
+    right: 3vw;
+    position: absolute;
+}
+@media (max-width: 700px){
+    body{
+        height: 100%;
+        width: 100%;
+    }
+    .navv {
+        height: 5%;
+    }
+    .navv h2{
+        font-size: 20px;
+    }
+    .navv .btn{
+        font-size: 15px;
+        margin-right: 2%;
+    }
+    .tagline{
+        margin-top: 6vh;
+    }
+    .tagline h1{
+        margin-left: 2vw;
+        font-size: 5vw;
+    }
+    .tagline p{
+        height: 0%;
+        width: 0%;
+        position: absolute;
+        opacity: 0;
+    }
+    .main{
+        margin-top: 10vh;
+    }
+    .container{
+        position: absolute;
+    }
+    .secondline p{
+        opacity: 1;
+        width: 100%;
+        height: 30vw;
+        font-size: 20px;
+    }
+    .secondline{
+        margin-left: 2vw;
+        opacity: 100%;
+    }
+    .image{
+        height: 30vh;
+        width: 100%;
+        display: block;
+    }
+    .image .pc{
+        margin-top: 5vh;
+        margin-left: 8vh;
+    }
+    .image .laptop{
+        margin-top: -42%;
+    }
+    .footer{
+        height: 15%;
+    }
+    .footer .aboutus{
+        font-size: 3.5vw;
+        display: block;
+        width: 100%;
+        height: 25px;
+    }
+    .aboutus .github{
+        height: 20px;
+        width: 30px;
+    }
+    .aboutus .email{
+        height: 17px;
+        width: 17px;
+    }
+    .aboutus .twitter{
+        height: 20px;
+        width: 20px;
+    }
+    .footer .copyrights{
+        display: block;
+        width: 100%;
+    }
+}
