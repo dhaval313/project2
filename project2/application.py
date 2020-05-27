@@ -12,6 +12,6 @@ socketio = SocketIO(app)
 def index():
     return render_template("index.html")
 
-@app.route("/login")
+@app.route("/login", methods=["POST","GET"])
 def login():
-    return render_template("login.html")
+    return render_template("home.html")

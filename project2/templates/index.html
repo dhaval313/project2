@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block head %}
+    <script src="/static/js/index.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/index.css') }}">
 {% endblock %}
 {% block body %}
@@ -13,7 +14,7 @@
             <h2><a href="{{url_for('index')}}">Flack</a></h2>
         </div>
         <div class="getstarted">
-            <form action="{{url_for('login')}}" method="POST">
+            <form onclick="usrnm()" action="{{url_for('login')}}" method="POST">
                 <input class="btn default" type="submit" value="Get Started">
             </form>
         </div>
@@ -27,8 +28,8 @@
                 <p>Flack will allow you to create channels and invite your friends to join and chat easily.</p>
             </div>
             <div class="image">
-                <img class="pc" src="/static/images/discord_pc.svg">
-                <img class="laptop" src="/static/images/discord_laptop.svg">
+                <img class="airplane" src="/static/images/grey_airplane.png">
+                <img class="pc" src="/static/images/discord_svgs.png">
             </div>
         </div>
         <div class="secondline">
@@ -39,9 +40,9 @@
         <br>
         <div class="aboutus">
             About us : 
-            <a href="https://github.com/dhaval313" target="_blank"><img class="github" src="static/images/github-icon.png"></a>
-            <a href="mailto:dashadiadhaval313@gmail.com" target="_blank"><img class="email" src="/static/images/emailicon.png"></a>
-            <a href="https://twitter.com/__no_0ne" target="_blank"><img class="twitter" src="/static/images/twitter-icon.png"></a>
+            <a href="https://github.com/dhaval313" target="_blank"><img class="github" src="static/images/githubico.png"></a>
+            <a href="mailto:dashadiadhaval313@gmail.com" target="_blank"><img class="email" src="/static/images/emailico.png"></a>
+            <a href="https://twitter.com/__no_0ne" target="_blank"><img class="twitter" src="/static/images/twitterico.png"></a>
         </div>
         <div class="copyrights">
             <div class="copyright">

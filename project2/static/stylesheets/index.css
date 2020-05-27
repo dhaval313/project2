@@ -26,6 +26,9 @@
     border-radius: 5%;
     outline: none;
 }
+.navv a:hover{
+    text-decoration: none;
+}
 .navv .name{
     width: 45vw;
     flex-wrap: nowrap;
@@ -76,17 +79,26 @@ body{
 }
 .image .pc{
     margin-top: 10vh;
-    margin-left: 17vh;
+    margin-left: 5vw;
     height: auto;
-    width: 80%;
-    position: relative;
+    width: 50vw;
 }
-.image .laptop{
-    margin-top: -48%;
-    margin-left:40%;
-    height: auto;
-    width: 80%;
-    position: relative;
+@keyframes airplane{
+    from {
+        margin-top: 13vh;
+    }
+    to {
+        margin-top: 11vh;
+    }
+}
+.image .airplane{
+    animation: airplane .8s infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    margin-right: -10vw;
+    margin-top: 10vh;
+    width: 10%;
+    float: right;
 }
 .footer{
     display: flex;
@@ -142,86 +154,4 @@ body{
     height: auto;
     right: 3vw;
     position: absolute;
-}
-@media (max-width: 700px){
-    body{
-        height: 100%;
-        width: 100%;
-    }
-    .navv {
-        height: 5%;
-    }
-    .navv h2{
-        font-size: 20px;
-    }
-    .navv .btn{
-        font-size: 15px;
-        margin-right: 2%;
-    }
-    .tagline{
-        margin-top: 6vh;
-    }
-    .tagline h1{
-        margin-left: 2vw;
-        font-size: 5vw;
-    }
-    .tagline p{
-        height: 0%;
-        width: 0%;
-        position: absolute;
-        opacity: 0;
-    }
-    .main{
-        margin-top: 10vh;
-    }
-    .container{
-        position: absolute;
-    }
-    .secondline p{
-        opacity: 1;
-        width: 100%;
-        height: 30vw;
-        font-size: 20px;
-    }
-    .secondline{
-        margin-left: 2vw;
-        opacity: 100%;
-    }
-    .image{
-        height: 30vh;
-        width: 100%;
-        display: block;
-    }
-    .image .pc{
-        margin-top: 5vh;
-        margin-left: 8vh;
-    }
-    .image .laptop{
-        margin-top: -42%;
-    }
-    .footer{
-        height: 15%;
-    }
-    .footer .aboutus{
-        font-size: 3.5vw;
-        display: block;
-        width: 100%;
-        height: 25px;
-    }
-    .aboutus .github{
-        height: 20px;
-        width: 30px;
-    }
-    .aboutus .email{
-        height: 17px;
-        width: 17px;
-    }
-    .aboutus .twitter{
-        height: 20px;
-        width: 20px;
-    }
-    .footer .copyrights{
-        display: block;
-        width: 100%;
-    }
 }
