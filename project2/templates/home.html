@@ -11,14 +11,16 @@
 {% endblock %}
 
 {% block body %}
-<div class="navv">
-    <div class="name">
-        <h2><a href="{{url_for('index')}}">Flack</a></h2>
+    <div class="navv">
+        <div class="name">
+            <h2><a href="{{url_for('index')}}">Flack</a></h2>
+        </div>
+        <input type="text" name="search" class="search" placeholder="Search channel..">
+        <div class="user">
+            <p class="usrnm">Logged in as : <a onclick="change_username()" href=""><span class="usr"></span></a></p>
+        </div>
     </div>
-    <div class="getstarted">
-        <form onclick="usrnm()" action="{{url_for('login')}}" method="POST">
-            <input class="btn default" type="submit" value="Change user name">
-        </form>
+    <div class="sidebar">
+        
     </div>
-</div>
 {% endblock %}
