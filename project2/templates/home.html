@@ -16,11 +16,24 @@
             <h2><a href="{{url_for('index')}}">Flack</a></h2>
         </div>
         <input type="text" name="search" class="search" placeholder="Search channel..">
-        <div class="user">
-            <p class="usrnm">Logged in as : <a onclick="change_username()" href=""><span class="usr"></span></a></p>
-        </div>
     </div>
     <div class="sidebar">
-        
+        <div class="user">
+            <p class="usrnm"><span class="usr"></span><a onclick="change_username()" href=""><img class="edit" src="/static/images/edit.png"></a></p>
+        </div>
+        <div class="channels">
+            <div class="create">
+                <a href="" onclick="create_channel"><img src="/static/images/plus.png"></a>
+                <input type="hidden" class="new" name="new">
+                <input type="hidden" class="flag" name="flag">
+            </div>
+            <div class="list">
+                {% for nam in names %}
+                    <div class="element">
+                        <a>#{{ nam }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 {% endblock %}

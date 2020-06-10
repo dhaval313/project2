@@ -65,7 +65,7 @@
     opacity: 0;
 }
 body{
-    font-family: 'Comfortaa';
+    font-family: 'Comfortaa', sans-serif;
     background-color: #ffffff;
 }
 .main{

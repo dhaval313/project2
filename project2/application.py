@@ -1,12 +1,13 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 socketio = SocketIO(app)
 
+channels = ['demo']
 
 @app.route("/")
 def index():
@@ -14,4 +15,9 @@ def index():
 
 @app.route("/login", methods=["POST","GET"])
 def login():
-    return render_template("home.html")
+    global channels
+    if request.form.get('flag') == 1:
+        channels.append(request.form.get('new'))
+        request.form.get('flag') = 0
+
+    return render_template("home.html", names=channels)
