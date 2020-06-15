@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
@@ -15,9 +15,12 @@ def index():
 
 @app.route("/login", methods=["POST","GET"])
 def login():
-    global channels
-    if request.form.get('flag') == 1:
-        channels.append(request.form.get('new'))
-        request.form.get('flag') = 0
-
     return render_template("home.html", names=channels)
+
+@app.route("/new_channel", methods=["POST"])
+def new_channel():
+    new = request.form.get('channel_name')
+    if new not in channels and len(new) <= 20:
+        channels.append(new)
+
+    return redirect(url_for("login"))

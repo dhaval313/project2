@@ -19,25 +19,10 @@ function change_username() {
     }
 }
 function create_channel() {
-    var i = 0;
-    while (i === 0){
-        var name = prompt("Channel name: ");
-        if (name.length > 12) {
-            name = prompt("Length must be less thane 12:");
-        }
-        if (name != null && name != "") {
-            document.querySelector('.new').value = name;
-            document.querySelector('.flag').value = 1;
-            i = 1;
-        }
-        else if (name == null) {
-            i = 1;
-        }
+    if (document.getElementById("input_name").style.display === "none"){
+        document.getElementById("input_name").style.display = "block";
     }
-    const request = new XMLHttpRequest();
-    request.open('POST','/login');
-
-    request.onload = () => {
-        document.querySelector('.flag').value = 0;
+    else {
+        document.getElementById("input_name").style.display = "none";
     }
 }

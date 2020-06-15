@@ -3,7 +3,6 @@
     background: transparent;
 }
 body{
-    height: 50vh;
     font-family: 'Comfortaa', sans-serif;
 }
 .navv {
@@ -11,26 +10,6 @@ body{
     height: 7vh;
     width: 100%;
     background-color: #1E7AE1;
-}
-.navv .search{
-    font-weight: bold;
-    display: flex;
-    flex-wrap: nowrap;
-    align-self: center;
-    margin: auto;
-    color: #ffffff;
-    font-size: 13px;
-    padding-left: 5px;
-    width: 30%;
-    height: 25px;
-    background-color: #1966BC;
-    border: 1px solid black;
-    border-color: #ffffff;
-    border-radius: 5px;
-    outline: none;
-}
-.navv .search::placeholder{
-    color: #ececec;
 }
 .navv .name{
     height: 100%;
@@ -63,7 +42,7 @@ body{
     text-align: center;
     border-top: 1px solid white;
     border-color: #4ad5e7;
-    height: 100vh;
+    height: 93vh;
     width: 20vw;
     position: absolute;
     background-color: #4B95E7;
@@ -75,6 +54,7 @@ body{
     margin-left: 15px;
 }
 .sidebar .create{
+    cursor: pointer;
     height: auto;
     margin-top: 7%;
     display: inline-block;
@@ -84,9 +64,86 @@ body{
     border-radius: 50%;
     align-items: center; 
     background-color: white;
+    transition: box-shadow .5s;
+}
+.sidebar .create:hover{
+    -webkit-box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 10px #000;
+}
+.sidebar .channel_name::placeholder{
+    color: white;
+}
+.sidebar #input_name{
+    display: none;
+}
+.sidebar .submit_name{
+    color: #1E7AE1;
+    background-color: white;
+    border-radius: 3px;
+    width: 30px;
+    margin-bottom: -20px;
+    outline: none;
+    height: 25px;
+    border: none;
+    padding-top: 2px;
+}
+.sidebar .channel_name{
+    color: white;
+    height: 25px;
+    width: 200px;
+    padding: 2px;
+    margin-top: 5%;
+    font-size: 15px;
+    outline: none;  
+    border-radius: 5px;
+    border: 1px solid black;
+    background: transparent;
+    border-color: white;
+    display: inline-block;
 }
 .sidebar .channels img{
     height: 30px;
     width: 30px;
     display: inline-block;
+}
+.sidebar .list{
+    margin-top: 10%;
+    text-align: left;
+    
+}
+.sidebar .list .element{
+    color: white;
+    font-size: 20px;
+    margin-left: 30%;
+    word-wrap: break-word;
+    margin-right: 20px;
+}
+.main{
+    height: 93vh;
+    width: 80vw;
+}
+.main .send_message{
+    left: 20%;
+    display: flex;
+    flex-wrap: nowrap;
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+    height: 50px;
+    background-color: #5d9fe9;
+    
+}
+.message{
+    margin: auto auto;
+    margin-left: 1%;
+    padding-left: 10px;
+    outline: none;
+    left: 50;
+    /*width: 97%;*/
+    border: 0px;
+    height: 35px;
+    border-radius: 20px;
+}
+.main .send_message .send{
+    display: none;
 }

@@ -15,18 +15,21 @@
         <div class="name">
             <h2><a href="{{url_for('index')}}">Flack</a></h2>
         </div>
-        <input type="text" name="search" class="search" placeholder="Search channel..">
     </div>
     <div class="sidebar">
         <div class="user">
             <p class="usrnm"><span class="usr"></span><a onclick="change_username()" href=""><img class="edit" src="/static/images/edit.png"></a></p>
         </div>
         <div class="channels">
-            <div class="create">
-                <a href="" onclick="create_channel"><img src="/static/images/plus.png"></a>
-                <input type="hidden" class="new" name="new">
-                <input type="hidden" class="flag" name="flag">
+            <div class="create" onclick="create_channel()">
+                <img src="/static/images/plus.png">
             </div>
+                <div id="input_name">
+                    <form action="{{ url_for('new_channel') }}" method="POST">
+                        <input type="text" class="channel_name" name="channel_name" placeholder="Channel Name...">
+                        <input type="submit" value="+" class="submit_name">
+                    </form>
+                </div>
             <div class="list">
                 {% for nam in names %}
                     <div class="element">
@@ -34,6 +37,15 @@
                     </div>
                 {% endfor %}
             </div>
+        </div>
+    </div>
+    <div class="main">
+        
+        <div class="send_message">
+            <form>
+                <input type="text" name="message" class="message" placeholder="Type a message">
+                <input type="submit" name="send" class="send">
+            </form>
         </div>
     </div>
 {% endblock %}
