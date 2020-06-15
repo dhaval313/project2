@@ -133,12 +133,9 @@ body{
     background-color: #5d9fe9;
     
 }
-.form{
-    text-align: center;
-    margin: auto;
-    width: 100%;
-}
-.main .send_message .form .message{
+.main .send_message .message{
+    align-self: center;
+    margin: 0 auto;
     padding-left: 10px;
     outline: none;
     width: 97%;
@@ -147,5 +144,6 @@ body{
     border-radius: 20px;
 }
 .main .send_message .send{
+    cursor: pointer;
     display: none;
 }
