@@ -133,16 +133,11 @@ body{
     background-color: #5d9fe9;
     
 }
-.form{
-    margin: auto auto;
-    width: 100%;
-}
-.main .send_message .form .message{
-    margin: auto auto;
-    margin-left: 1%;
+.main .send_message .message{
+    align-self: center;
+    margin: 0 auto;
     padding-left: 10px;
     outline: none;
-    left: 50;
     width: 97%;
     border: 0px;
     height: 35px;
