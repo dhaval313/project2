@@ -149,5 +149,6 @@ body{
     border-radius: 20px;
 }
 .main .send_message .send{
+    cursor: pointer;
     display: none;
 }

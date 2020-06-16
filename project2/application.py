@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 socketio = SocketIO(app)
 
-channels = ['demo']
+messages = {"demo":[]}
 
 @app.route("/")
 def index():
@@ -15,12 +15,15 @@ def index():
 
 @app.route("/login", methods=["POST","GET"])
 def login():
+    channels = []
+    for key in messages:
+        channels.append(key)
     return render_template("home.html", names=channels)
 
 @app.route("/new_channel", methods=["POST"])
 def new_channel():
     new = request.form.get('channel_name')
-    if new not in channels and len(new) <= 20:
-        channels.append(new)
+    if new not in messages and len(new) <= 20:
+        messages[new] = []
 
     return redirect(url_for("login"))
