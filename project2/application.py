@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 socketio = SocketIO(app)
 
-messages = {"demo":[]}
+messages = {"demo":['root','Hello']}
 
 @app.route("/")
 def index():

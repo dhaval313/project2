@@ -33,7 +33,7 @@
             <div class="list">
                 {% for nam in names %}
                     <div class="element">
-                        <a>#{{ nam }}</a>
+                        <a href="#" onclick="change_channel('{{ nam }}')">#{{ nam }}</a>
                     </div>
                 {% endfor %}
             </div>

@@ -109,14 +109,20 @@ body{
 .sidebar .list{
     margin-top: 10%;
     text-align: left;
-    
 }
+
 .sidebar .list .element{
-    color: white;
     font-size: 20px;
     margin-left: 30%;
     word-wrap: break-word;
     margin-right: 20px;
+}
+.sidebar .list .element a{
+    outline: none;
+    color: white;
+}
+.element a:hover{
+    text-decoration: none;
 }
 .main{
     height: 93vh;

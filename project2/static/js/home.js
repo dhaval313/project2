@@ -27,6 +27,7 @@ function create_channel() {
     }
 }
 function change_channel(name){
+    name = String(name);
     localStorage.setItem('channel', name);
     var url = '/channel/' + name;
     var request = new XMLHttpRequest();
@@ -41,26 +42,34 @@ function change_channel(name){
             if (data.name[0] === user){
                 var ur_text = document.createElement("div");
                 ur_text.className = "my_text";
+
                 var text_usr = document.createElement("span");
                 text_usr.className = "my_usrnm";
                 text_usr.innerHTML = data.name[0];
                 ur_text.appendChild(text_usr);
+                
                 var text_message = document.createElement("p");
                 text_message.className = "my_message";
                 text_message.innerHTML = data.name[1];
                 ur_text.appendChild(text_message);
+                
+                document.getElementsByClassName("recent_messages").appendChild(ur_text);
             }
             else {
                 var text = document.createElement("div");
                 text.className = "text";
+                
                 var usr_text = document.createElement("span");
                 usr_text.className = "usrnm";
                 usr_text.innerHTML = data.name[0];
                 text.appendChild(usr_text);
+                
                 var message_text = document.createElement("p");
                 message_text.className = "message";
                 message_text.innerHTML = data.name[1];
                 text.appendChild(message_text);
+                
+                document.getElementsByClassName("recent_messages").appendChild(text);
             }
         }
     }
