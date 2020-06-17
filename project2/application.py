@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 socketio = SocketIO(app)
 
-messages = {"demo":['root','Hello']}
+messages = {"demo":[['root','Hello'], ['root1','Hi']]}
 
 @app.route("/")
 def index():
@@ -28,7 +28,7 @@ def new_channel():
 
     return redirect(url_for("login"))
 
-@app.route("/channel/<string:channel>", methods=["POST"])
+@app.route("/channel/<string:channel>", methods=["POST", "GET"])
 def channel(channel):
     
     return jsonify({channel: messages[channel]})
