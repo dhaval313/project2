@@ -1,6 +1,6 @@
-import os
+import os, json
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
@@ -27,3 +27,8 @@ def new_channel():
         messages[new] = []
 
     return redirect(url_for("login"))
+
+@app.route("/channel/<string:channel>", methods=["POST"])
+def channel(channel):
+    
+    return jsonify({channel: messages[channel]})
