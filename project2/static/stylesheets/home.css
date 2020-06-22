@@ -128,11 +128,20 @@ body{
     height: 93vh;
     width: 80vw;
 }
-.recent_messages{
+.main .recent_messages{
     height: auto;
     width: 80vw;
     display: flex;
     margin-left: 20vw;
+}
+.ur_text{
+    width: auto;
+    max-width: 300px;
+    word-wrap: break-word;
+    height: auto;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #78b0ed;
 }
 .main .send_message{
     left: 20%;
