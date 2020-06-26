@@ -114,7 +114,6 @@ body{
 .sidebar .list .element{
     font-size: 20px;
     margin-left: 30%;
-    word-wrap: break-word;
     margin-right: 20px;
 }
 .sidebar .list .element a{
@@ -130,20 +129,34 @@ body{
 }
 .main .recent_messages{
     height: auto;
-    width: 80vw;
+    width: 80%;
     display: flex;
     margin-left: 20vw;
+    position: absolute;
+    bottom: 35px;
 }
-.ur_text{
-    width: auto;
-    max-width: 300px;
-    word-wrap: break-word;
+.main .my_text{
+    margin-left: 20px;
+    width: 100vw;
     height: auto;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #78b0ed;
+    display: block;
 }
-.main .send_message{
+.main .my_usrnm{
+    display: inline;
+    color: #78b0ed;
+    font-size: 25px;
+    text-decoration: underline;
+}
+.main .my_time{
+    display: inline;
+    margin-left: 15px;
+    font-size: 12px;
+}
+.main .text{
+    width: 100vw;
+    display: block;
+}
+.send_message{
     left: 20%;
     display: flex;
     flex-wrap: nowrap;
@@ -154,9 +167,14 @@ body{
     background-color: #5d9fe9;
     
 }
-.main .send_message .message{
-    align-self: center;
-    margin: 0 auto;
+form {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
+    top: 50%;
+}
+.send_message .message{
     padding-left: 10px;
     outline: none;
     width: 97%;
@@ -164,7 +182,7 @@ body{
     height: 35px;
     border-radius: 20px;
 }
-.main .send_message .send{
+.send_message .send{
     cursor: pointer;
     display: none;
 }

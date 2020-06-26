@@ -43,3 +43,13 @@ def new_channel():
 def channel(channel):
     
     return jsonify(messages[channel])
+
+@socketio.on("submit message")
+def message(data):
+    message = data["message"]
+    usr = data["user"]
+    time = data["time"]
+    channel = data["channel"]
+    message[channel][0] = [usr, message, time]
+
+    emit("announce message", {"message": message, "user": usr, "time":time, "channel": channel}, broadcast=True)

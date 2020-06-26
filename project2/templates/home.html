@@ -43,8 +43,10 @@
         <div class="recent_messages"> 
         </div>
         <div class="send_message">
+            <form onsubmit="send_message()">
                 <input type="text" name="message" class="message" placeholder="Type a message">
                 <input type="submit" name="send" class="send">
+            </form>
         </div>
     </div>
 {% endblock %}

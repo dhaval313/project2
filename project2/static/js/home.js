@@ -43,22 +43,22 @@ function change_channel(name) {
             for (i = 0; i < response.length; i++) {
                 if (response[i][0] === user) {
                     var ur_text = document.createElement("div");
-                    ur_text.className = "my_usrnm";
+                    ur_text.className = "my_text";
 
                     var text_usr = document.createElement("span");
                     text_usr.className = "my_usrnm";
                     text_usr.innerHTML = response[i][0];
                     ur_text.appendChild(text_usr);
 
-                    var text_message = document.createElement("p");
-                    text_message.className = "my_message";
-                    text_message.innerHTML = response[i][1];
-                    ur_text.appendChild(text_message);
-
                     var time = document.createElement("p");
                     time.className = "my_time";
                     time.innerHTML = response[i][2];
                     ur_text.appendChild(time);
+
+                    var text_message = document.createElement("p");
+                    text_message.className = "my_message";
+                    text_message.innerHTML = response[i][1];
+                    ur_text.appendChild(text_message);
 
                     document.getElementsByClassName("recent_messages")[0].appendChild(ur_text);
                 }
@@ -71,19 +71,83 @@ function change_channel(name) {
                     usr_text.innerHTML = response[i][0];
                     text.appendChild(usr_text);
 
-                    var message_text = document.createElement("p");
-                    message_text.className = "message";
-                    message_text.innerHTML = response[i][1];
-                    text.appendChild(message_text);
-
                     var time = document.createElement("p");
                     time.className = "time";
                     time.innerHTML = response[i][2];
                     text.appendChild(time);
+
+                    var message_text = document.createElement("p");
+                    message_text.className = "message";
+                    message_text.innerHTML = response[i][1];
+                    text.appendChild(message_text);
 
                     document.getElementsByClassName("recent_messages")[0].appendChild(text);
                 }
             }
         }
     );
+}
+function send_message(){
+    var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+
+    socket.on('connect', () => {
+        const message = document.querySelector('.message').value;
+        const usr = localStorage.getItem('name');
+        const date = new Date();
+        var hour = date.getHours();
+        var minutes = date.getMinutes();
+        const time = hour + ':' + minutes;
+        const channel = localStorage.getItem('channel')
+
+        socket.emit('submit message', {'message': message, 'user': usr, 'time': time, 'channel': channel});
+    }
+    );
+    socket.on('announce message', data => {
+        var usr = localStorage.getItem('name');
+        var channel = localStorage.getItem('channel');
+        if(data.channel === channel){
+            if (data.user === usr) {
+                var ur_text = document.createElement("div");
+                ur_text.className = "my_text";
+
+                var text_usr = document.createElement("span");
+                text_usr.className = "my_usrnm";
+                text_usr.innerHTML = response[i][0];
+                ur_text.appendChild(text_usr);
+
+                var time = document.createElement("p");
+                time.className = "my_time";
+                time.innerHTML = response[i][2];
+                ur_text.appendChild(time);
+
+                var text_message = document.createElement("p");
+                text_message.className = "my_message";
+                text_message.innerHTML = response[i][1];
+                ur_text.appendChild(text_message);
+
+                document.getElementsByClassName("recent_messages")[0].appendChild(ur_text);
+            }
+            else {
+                var text = document.createElement("div");
+                text.className = "text";
+
+                var usr_text = document.createElement("span");
+                usr_text.className = "usrnm";
+                usr_text.innerHTML = response[i][0];
+                text.appendChild(usr_text);
+
+                var time = document.createElement("p");
+                time.className = "time";
+                time.innerHTML = response[i][2];
+                text.appendChild(time);
+
+                var message_text = document.createElement("p");
+                message_text.className = "message";
+                message_text.innerHTML = response[i][1];
+                text.appendChild(message_text);
+
+                document.getElementsByClassName("recent_messages")[0].appendChild(text);
+            }
+        }
+    });
 }
