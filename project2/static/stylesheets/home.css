@@ -169,12 +169,11 @@ body{
 }
 form {
     width: 100%;
-    height: auto;
+    height: 100%;
     text-align: center;
-    vertical-align: middle;
-    top: 50%;
 }
 .send_message .message{
+    align-items: center;
     padding-left: 10px;
     outline: none;
     width: 97%;
